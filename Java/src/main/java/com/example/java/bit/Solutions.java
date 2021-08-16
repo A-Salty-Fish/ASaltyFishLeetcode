@@ -55,4 +55,18 @@ public class Solutions {
         } while(n != 0);
         return result.reverse().toString();
     }
+
+    /**
+     * 191. 位1的个数
+     * @param n
+     * @return
+     */
+    public int hammingWeight(int n) {
+        int result = 0;
+        while (n != 0) {
+            n &= n - 1;
+            result++;
+        }
+        return result;
+    }
 }
