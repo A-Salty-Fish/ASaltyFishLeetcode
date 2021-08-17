@@ -1,6 +1,8 @@
 package com.example.java.bit;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author dzy
@@ -96,6 +98,20 @@ public class Solutions {
             int tmp = result & carry;
             result = result ^ carry;
             carry = tmp << 1;
+        }
+        return result;
+    }
+
+    /**
+     * 89. 格雷编码
+     * @param n
+     * @return
+     */
+    public List<Integer> grayCode(int n) {
+        List<Integer> result = new ArrayList<Integer>();
+        int powN = 1 << n;
+        for (int i = 0; i < powN; ++i) {
+            result.add(i^(i>>1));
         }
         return result;
     }
