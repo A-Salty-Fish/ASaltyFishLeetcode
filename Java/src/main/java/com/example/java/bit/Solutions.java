@@ -83,5 +83,20 @@ public class Solutions {
         return ans;
     }
 
-    
+    /**
+     * 371. 两整数之和
+     * @param a
+     * @param b
+     * @return
+     */
+    public int getSum(int a, int b) {
+        int carry = (a&b)<<1;
+        int result = a^b;
+        while (carry!=0) {
+            int tmp = result & carry;
+            result = result ^ carry;
+            carry = tmp << 1;
+        }
+        return result;
+    }
 }
