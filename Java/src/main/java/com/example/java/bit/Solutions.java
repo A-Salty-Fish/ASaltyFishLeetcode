@@ -69,4 +69,19 @@ public class Solutions {
         }
         return result;
     }
+
+    /**
+     * 190. 颠倒二进制位
+     * @param n
+     * @return
+     */
+    public int reverseBits(int n) {
+        int ans = 0;
+        for (int bitsSize = 31; n != 0; n = n >>> 1, bitsSize--) {
+            ans |= (n & 1) << bitsSize;
+        }
+        return ans;
+    }
+
+    
 }
